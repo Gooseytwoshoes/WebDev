@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nico's Workshop</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    
+    <div id="menu">
+        <header>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#product">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li>
+                        <!--This section, instead of a sidebar would redirect to the checkout HTML-->
+                        <div class="shopping">
+                            <a href="#cart">
+                                <img src="shopping-bag-16.png" alt="Cart">
+                                <span class="quantity">0</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <body>
+        <section id="home">
+            <h1>Nico's <br>Workshop</h1>
+            <h2>In guns we trust</h2>
+        </section>
+
+        <section id="product" class="full_section">
+            <h1>Products</h1>
+            <video autoplay loop muted id="bg-video">
+                <source src="Devil May Cry 5 -Trailer.mp4">
+            </video>
+
+            <div id="section_nero" class="section">
+                <h2>Nero</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae corrupti cupiditate libero architecto ducimus commodi quaerat repellendus! Culpa nesciunt vitae facilis sunt incidunt aut molestias dolor omnis quos, totam enim.</p>
+                <!--Carousel of items of Nero-->
+                <!--items are placed in a card that would have two buttons, one for more details and one for adding it to the cart-->
+            </div>
+            <br>
+            <div id="section_dante" class="section">
+                <h2>Dante</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam exercitationem at facere quia tempora expedita adipisci, quidem rem? Doloribus praesentium dolores vel pariatur itaque omnis in minima dicta architecto suscipit!</p>
+                <!--Carousel of items of Dante-->
+            </div>
+            <br>
+            <div id="section_v" class="section">
+                <h2>V</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ratione nesciunt, commodi ipsa necessitatibus ex libero fuga? Quaerat, facere. Nisi accusantium exercitationem dolorem numquam sapiente atque laudantium dolores dolorum necessitatibus.</p>
+                <!--Carousel of items of V-->
+            </div>
+        </section>
+
+        <section id="about" class="full_section">
+            <h1>About us</h1>
+            <div class="side">
+                <div id="left-column">
+                    <h2>Owner of the shop</h2>
+                    <h1>Nico</h1>
+                </div>
+
+                <div id="right-column">
+                    <img src="nico.jpg" alt="Nico" style="height: 80svh; width: auto;">
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="full_section">
+            <h1>Location</h1>
+            <div class="side">
+                <div id="left-column">
+                    <h2>We're constantly roaming, here are our given schedule for stops</h2>
+                </div>
+
+                <div id="right-column" style="background-color: aqua; width: 40%;">
+                    <table>
+                        <tr>
+                            <th>hello</th>
+                            <td>world</td>
+                        </tr>
+                        <tr>
+                            <td>foo</td>
+                            <td>bar</td>
+                            <td>baz</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="footer">
+            
+        </section>
+    
+        <script src="script.js"></script>
+    </body>
+</html>
