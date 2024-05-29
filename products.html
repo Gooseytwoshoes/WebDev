@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="nico_logo.png">
+    <title>Nico's Workshop Products</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="menu">
+        <header>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="NicoShopHome.html#home">Home</a></li>
+                    <li><a href="NicoShopHome.html#product">Products</a></li>
+                    <li><a href="NicoShopHome.html#about">About</a></li>
+                    <li><a href="NicoShopHome.html#location">Location</a></li>
+                    <li>
+                        <div class="shopping">
+                            <img src="shopping-bag-16.png" alt="Cart">
+                            <span class="quantity">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="list" style="padding: 13vh 5% 13vh 5%;">
+        </div>
+    </div>
+    
+    <div class="card">
+        <h2>Cart</h2>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+    <div id="popupBox" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Thank you for shopping with us!</h2>
+            <p>please fillup this form with your information.</p>
+            <table>
+                <tr>
+                    <th>Shipping information</th>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Full name:</label>
+                        <input type="text" name="name" id="shippingName" class="fullInput" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="address">Full address:</label>
+                        <input type="text" name="address" id="shippingAddress" class="fullInput" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center_table">
+                            <br>
+                            <label for="baranggay">Baranggay:</label>
+                            <input type="text" name="baranggay" id="shippingBaranggay" class="halfInput" required>
+                            
+                            <label for="city">City:</label>
+                            <input type="text" name="city" id="shippingCity" class="halfInput" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="center_table">
+                            <br>
+                            <label for="zip">Zip code:</label>
+                            <input type="number" name="zip" id="shippingZip" class="halfInput" required>
+
+                            <label for="contact">Contact number:</label>
+                            <input type="number" name="contact" id="shippingContact" class="halfInput" required>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <label for="payment">Payment Option:</label>
+                        <select name="Payment Option" id="payment" class="selectionBox">
+                            <option value="Cash">Cash on Delivery</option>
+                            <option value="Gcash">Gcash</option>
+                            <option value="Credit Card">Credit Card</option>
+                          </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type = "button" name = "login" class = "btn" value = "Check Out" onclick="clearCart()">
+        </div>
+    </div>
+
+    <section id="footer" style="margin: 0;">
+        <div class="footer_container">
+            <div class="social-media">
+                <a href="#fb.com"><i class="facebook"><img src="fb-logo.png" alt="facebook"></i></a>
+                <a href="#twitter.com"><i class="twitter"><img src="twitter-logo.png" alt="twitter"></i></a>
+                <a href="#instagram.com"><i class="instagram"><img src="instagram-logo.png" alt="instagram"></i></a>
+            </div>
+    
+            <div>
+                <p>Email: Nicoletta-Workshop@RedGrave.com</p>
+                <p>Phone: 6-MY-GOD-099</p>
+                <p>Address: 123 Main St, Redgrave, USA</p>
+            </div>
+    
+            <div>
+                <p>2024 Nico's Workshop. All rights reserved.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
