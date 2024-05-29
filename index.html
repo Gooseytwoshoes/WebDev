@@ -1,6 +1,7 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="nico_logo.png">
     <title>Nico's Workshop Login page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
@@ -20,13 +21,13 @@
         <div id="left-column">
             <div id="inputs-container">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
+                <input type="text" name="username" id="username" class="login_input" required>
                 
                 <label for="password">Password:</label>
-                <input type= "password" name="password" id="password" required>
+                <input type= "password" name="password" id="password" class="login_input" required>
 
                 <br>
-                <input type = "button" name = "login" id = "btn_login" value = "Login" onclick="login()">
+                <input type = "button" name = "login" class = "btn" value = "Login" onclick="login()">
             </div>
         </div>
 
@@ -37,7 +38,23 @@
     </section>
 
     <section id="footer" style="margin: 0;">
-
+        <div class="footer_container">
+            <div class="social-media">
+                <a href="#fb.com"><i class="facebook"><img src="fb-logo.png" alt="facebook"></i></a>
+                <a href="#twitter.com"><i class="twitter"><img src="twitter-logo.png" alt="twitter"></i></a>
+                <a href="#instagram.com"><i class="instagram"><img src="instagram-logo.png" alt="instagram"></i></a>
+            </div>
+    
+            <div>
+                <p>Email: Nicoletta-Workshop@RedGrave.com</p>
+                <p>Phone: 6-MY-GOD-099</p>
+                <p>Address: 123 Main St, Redgrave, USA</p>
+            </div>
+    
+            <div>
+                <p>2024 Nico's Workshop. All rights reserved.</p>
+            </div>
+        </div>
     </section>
     <script src="script.js"></script>
 </body>
