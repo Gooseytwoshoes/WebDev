@@ -113,7 +113,7 @@ let products = [
         image: 'Gerbera_GP01.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 9500
     },
     {
         id: 10,
@@ -121,7 +121,7 @@ let products = [
         image: 'Pasta_breaker.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 9500
     },
     {
         id: 11,
@@ -129,7 +129,7 @@ let products = [
         image: 'Mega_buster.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 9500
     },
     {
         id: 12,
@@ -137,7 +137,7 @@ let products = [
         image: 'Sweet_surrender.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 8500
     },
     {
         id: 13,
@@ -145,7 +145,7 @@ let products = [
         image: 'Monkey_business.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 8000
     },
     {
         id: 14,
@@ -153,7 +153,7 @@ let products = [
         image: 'Cavaliere_R.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 350000
     },
     {
         id: 15,
@@ -161,7 +161,7 @@ let products = [
         image: 'Double_kalina_ann.jpg',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 12000
     },
     {
         id: 16,
@@ -169,7 +169,7 @@ let products = [
         image: 'Blue_orb.png',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 3500
     },
     {
         id: 17,
@@ -177,7 +177,7 @@ let products = [
         image: 'Gold_orb.png',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 3500
     },
     {
         id: 18,
@@ -185,7 +185,7 @@ let products = [
         image: 'Purple_orb.png',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 3500
     },
     {
         id: 19,
@@ -193,7 +193,7 @@ let products = [
         image: 'Vital_Star.png',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 6000
     },
     {
         id: 20,
@@ -201,7 +201,7 @@ let products = [
         image: 'Devil_Star.png',
         description: '',
         quantity: 99,
-        price: 5000
+        price: 6000
     },
 ];
 
@@ -220,9 +220,75 @@ function initApp(){
         list.appendChild(newDiv);
     })
 }
+
 initApp();
 
-function addToCart(key){
-    //add items into cart grabbing item ID to be added into it.
-    alert("Item added to cart.");
+function addToCart(key) {
+    if (!listCards[key]) {
+        listCards[key] = {...products[key], quantity: 1 };
+    } else {
+        listCards[key].quantity += 1;
+    }
+    reloadCard();
 }
+
+function clearCart() {
+    //clear the cart
+    for (let key in listCards) {
+        delete listCards[key];
+    }
+    alert("Your items are now being processed!")
+    reloadCard();
+}
+
+function reloadCard() {
+    let count = 0;
+    let totalPrice = 0;
+
+    listCard.innerHTML = '';
+    listCards.forEach((value, key) => {
+        totalPrice += value.price * value.quantity;
+        count += value.quantity;
+
+        if(value != null){
+            let newDiv = document.createElement('li')
+            newDiv.innerHTML = `
+                <div><img src="${value.image}"/></div>
+                <div>${value.name}</div>
+                <div>${value.price.toLocaleString()}</div>
+                <div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                    <div class="count">${value.quantity}</div>
+                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                </div>
+            `
+            listCard.appendChild(newDiv)
+        }
+    });
+    total.innerText = totalPrice.toLocaleString();
+    quantity.innerText = count;
+}
+
+function changeQuantity(key, quantity){
+    if(quantity == 0){
+        delete listCards[key]
+    }else{
+        listCards[key].quantity = quantity
+        listCards[key].price = quantity * products[key].price
+    }
+    reloadCard()
+}
+
+
+
+//checkout
+let closeButton = document.querySelector('.close');
+let totalDiv = document.querySelector('.total');
+
+totalDiv.addEventListener('click', function() {
+    document.getElementById('popupBox').classList.toggle('show');
+});
+
+closeButton.addEventListener('click', function() {
+    popupBox.classList.remove('show');
+});
