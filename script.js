@@ -279,7 +279,22 @@ function changeQuantity(key, quantity){
     reloadCard()
 }
 
+function validateAndSubmit() {
+    var shippingName = document.getElementById('shippingName').value;
+    var shippingAddress = document.getElementById('shippingAddress').value;
+    var shippingBaranggay = document.getElementById('shippingBaranggay').value;
+    var shippingCity = document.getElementById('shippingCity').value;
+    var shippingZip = document.getElementById('shippingZip').value;
+    var shippingContact = document.getElementById('shippingContact').value;
 
+    if (!shippingName ||!shippingAddress ||!shippingBaranggay ||!shippingCity ||!shippingZip ||!shippingContact) {
+        alert("Please fill out all required fields.");
+        return false;
+    } else {
+        clearCart();
+        return true;
+    }
+}
 
 //checkout
 let closeButton = document.querySelector('.close');
