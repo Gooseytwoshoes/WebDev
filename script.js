@@ -245,10 +245,15 @@ function reloadCard() {
     let count = 0;
     let totalPrice = 0;
 
+    //fix the number to only count the number unique id
     listCard.innerHTML = '';
     listCards.forEach((value, key) => {
+        //if the unique id is inside cart, don't add the "quantity"
         totalPrice += value.price * value.quantity;
-        count += value.quantity;
+        //count += value.quantity;
+        if (!productAddedBefore(value.id)) {
+            count++; // Increment count only if the product ID is unique
+        }
 
         if(value != null){
             let newDiv = document.createElement('li')
@@ -267,6 +272,10 @@ function reloadCard() {
     });
     total.innerText = totalPrice.toLocaleString();
     quantity.innerText = count;
+}
+
+function productAddedBefore(productId) {
+    return Object.values(listCards).some(product => products.id === parseInt(productId));
 }
 
 function changeQuantity(key, quantity){
